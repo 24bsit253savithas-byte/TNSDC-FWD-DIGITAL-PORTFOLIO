@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Data Access Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f7f8;
+      color: #333;
+      padding: 20px;
+    }
+
+    h2 {
+      color: #005a9c;
+    }
+
+    form {
+      background-color: #fff;
+      padding: 25px;
+      border-radius: 8px;
+      max-width: 500px;
+      margin: auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    label {
+      font-weight: bold;
+      display: block;
+      margin-top: 15px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      font-size: 14px;
+    }
+
+    input[type="submit"] {
+      background-color: #005a9c;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 4px;
+      margin-top: 20px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #003f6b;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Request Data Access</h2>
+
+  <form action="/submit-access-request" method="POST">
+    <label for="name">Full Name:</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="email">Email Address:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="dataType">Data Type Needed:</label>
+    <select id="dataType" name="dataType">
+      <option value="financial">Financial Data</option>
+      <option value="customer">Customer Data</option>
+      <option value="sales">Sales Data</option>
+    </select>
+
+    <label for="reason">Reason for Access:</label>
+    <textarea id="reason" name="reason" rows="4" cols="40"></textarea>
+
+    <input type="submit" value="Request Access">
+  </form>
+
+</body>
+</html>
